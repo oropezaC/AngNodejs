@@ -26,7 +26,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-  AppRoutingModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

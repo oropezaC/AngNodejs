@@ -9,10 +9,9 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 const routes: Routes = [
   { path: '', redirectTo: '/usuario', pathMatch: 'full' },
   { path: 'usuario',  component: UsuarioComponent },
-  { path: 'usuario-detail/:id',component: UsuarioDetailComponent, data: { title: 'USer Details' },
-  { path: 'usuario-create', component: UserCreateComponent, data: { title: 'Create USer'},
-  { path: 'user-edit/:id',component: UserEditComponent, data: { title: 'Edit USer' }
-  }
+  { path: 'usuario-create', component: UserCreateComponent},
+  { path: 'usuario-detail/:id',component: UsuarioDetailComponent},
+  { path: 'user-edit/:id',component: UserEditComponent},
 ];
 
 @NgModule({

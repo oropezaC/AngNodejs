@@ -22,8 +22,8 @@ export class UserEditComponent implements OnInit {
     });
   }
 
-  updateUser(id, this.user) {
-    console.log(id,this.user)
+  updateUser(id, user) {
+    console.log(id,user)
    // this.http.put('/book/'+id, data)
    //   .subscribe(res => {
    //       let id = res['_id'];
