@@ -1,15 +1,26 @@
 # AngNd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4. and [Node.js] (https://nodejs.org/es/) version 8.9
+>Este Proyecto esta desarrollado con [Angular CLI](https://github.com/angular/angular-cli) version 1.6.4. y [Node.js](https://nodejs.org/es/) version 8.9
 
 ## Dependencias en package.json
 
 Antes de comenzar, hay que instalar las dependencias correspondientes con el comando en consola `npm install` desde la raiz del proyecto.
 
-## Development server Angular
 
-Para correr el servidor en consola con `ng serve` y en el navegador usar `http://localhost:4200/`
 
-## Development server Node.JS
+## Corriendo App Demo
 
-Para correr el servidor node corer con `nodemon server/app.js`
+Una vez instaladas las dependecias, entramos en el direcorio raiz y corremos la aplicación
+
+```
+	cd AngNodejs
+	npm run start
+```
+
+Podremos ver en consola `Running on localhost :: 3000` y estamos listos.
+
+Accedemos http://localhost:3000 en el navegador y podremos ver nuestra app.
+
+
+
+

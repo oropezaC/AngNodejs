@@ -1,15 +1,18 @@
-const bodyParser = require('body-parser')
 const express = require('express')
-const app = express();
+const bodyParser = require('body-parser')
 const path = require('path')
+const http = require('http');
+const app = express();
 const port = process.env.PORT || 3000 ;
 
-const server = require('http');
 
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/', express.static(path.join(__dirname, 'dist')));
+
+
+app.use(express.static(path.join(__dirname, '..', 'dist')));
+
 
 app.use(function (req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,6 +27,12 @@ const usuarios = require('./routes/users');
 app.use('/usuarios',usuarios);
 
 
-server.createServer(app).listen(port,()=>{
-	console.log("listen in port :: " + port);
+app.get('*',(req,res)=>{
+	res.sendFile(path.join(__dirname, '..','dist/index.html'))
 });
+
+app.set('port',port);
+
+const server = http.createServer(app);
+
+server.listen(port,()=>console.log('Running on localhost::' + port))
