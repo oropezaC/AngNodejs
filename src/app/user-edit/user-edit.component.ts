@@ -22,15 +22,15 @@ export class UserEditComponent implements OnInit {
     });
   }
 
-  updateUser(id, user) {
-    console.log(id,user)
-   // this.http.put('/book/'+id, data)
-   //   .subscribe(res => {
-   //       let id = res['_id'];
-   //       this.router.navigate(['/book-details', id]);
-   //     }, (err) => {
-   //       console.log(err);
-   //     }
-   //   );
+  updateUser(user) {
+   this.http.put('http://localhost:3000/usuarios', user)
+     .subscribe(res => {
+       console.log(res)
+         let id = res['id'];
+         this.router.navigate(['/usuario']);
+       }, (err) => {
+         console.log(err);
+       }
+     );
  }
 }

@@ -23,13 +23,12 @@ export class UsuarioDetailComponent implements OnInit {
     }
 
   deleteUser(id) {
-    console.log(id)
-  // this.http.delete('http://localhost:3000/usuarios/'+id)
-  //   .subscribe(res => {
-  //       this.router.navigate(['/usuario']);
-  //     }, (err) => {
-  //       console.log(err);
-  //     }
-  //   );
+  this.http.delete('http://localhost:3000/usuarios/'+id)
+    .subscribe(res => {
+        this.router.navigate(['/usuario']);
+      }, (err) => {
+        console.log(err);
+      }
+    );
   }
 }

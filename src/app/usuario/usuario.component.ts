@@ -12,10 +12,12 @@ export class UsuarioComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute,private http: HttpClient) { }
   users: any;
+  log = ''
+  d:any;
   ngOnInit() {
     this.http.get('http://localhost:3000/usuarios').subscribe(data => {
-    this.users = data;
-    console.log("HEy",this.users)
+      this.d = data;
+      this.d.length >=1  ? this.users=data : this.log = "No hay datos";
   });
   }
 

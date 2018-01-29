@@ -1,9 +1,6 @@
-module.exports = {
-  getData,
-  getDataId,
-  saveUser
-};
+const dataModel = require('../model/data');
 
+let data = dataModel
 
 function getData(req,res) {
   res.json(data)
@@ -17,11 +14,36 @@ function getDataId(req,res) {
 
 
 function saveUser(req,res) {
-  console.log(req.body);
+  let newUser = req.body;
+  let id = data.length + 1
+  newUser.id = id;
+  data.push(newUser)
+  res.json(newUser.id)
 }
-let data = [
-  {id: 1, nombre:'Yahir Oropeza',departamento:'Desarrollo Web',edad:28,exp:'2 años',hb:'React.js and Node.js'},
-  {id: 2, nombre:'Angel Cordero',departamento:'Desarrollo Web',edad:23,exp:'1 año',hb:'php'},
-  {id: 3, nombre:'Karen Ramirez',departamento:'Documentacion',edad:21,exp:'1 año',hb:'Docuemntery'},
 
-]
+function deleteDataId(req,res) {
+  let id = req.params.id;
+  data = data.filter(item => item.id != id)
+  data = data;
+  res.json(data)
+}
+
+function updateUSer(req,res) {
+  let user = req.body;
+  data.forEach(function (data) {
+    if (data.id == user.id) {
+      data.nombre = user.nombre;
+      data.edad = user.edad;
+      data.hb = user.hb;
+    }
+  })
+  res.json(user)
+}
+
+module.exports = {
+  getData,
+  getDataId,
+  saveUser,
+  deleteDataId,
+  updateUSer
+};

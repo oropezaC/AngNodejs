@@ -18,8 +18,9 @@ export class UserCreateComponent implements OnInit {
   saveUser() {
    this.http.post('http://localhost:3000/usuarios', this.user)
      .subscribe(res => {
-         let id = 4;
-         this.router.navigate(['/usuario-detail', id]);
+       // console.log(res)
+       //   let id = res;
+         this.router.navigate(['/usuario']);
        }, (err) => {
          console.log(err);
        }

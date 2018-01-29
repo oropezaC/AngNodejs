@@ -1,19 +1,19 @@
 <div class="container">
+  <nav>
+    <a [routerLink]="['/usuario']" class="navigator">Inicio</a>
+    <a [routerLink]="['/usuario-create']" class="navigator">Crear un nuevo usuario</a>
+  </nav>
   <h1>{{ user.nombre }}</h1>
   <dl class="list">
-    <dt>Departamento</dt>
-    <dd>{{ user.departamento }}</dd>
     <dt>Edad</dt>
     <dd>{{ user.edad }}</dd>
-    <dt>Experiencia</dt>
-    <dd>{{ user.exp }}</dd>
     <dt>Hobies</dt>
     <dd>{{ user.hb }}</dd>
   </dl>
 <div class="row">
   <div class="col-md-12">
-    <a [routerLink]="['/user-edit', user.id]" class="btn btn-success">EDIT</a>
-    <button class="btn btn-danger" type="button" (click)="deleteUser(user.id)">DELETE</button>
+    <a [routerLink]="['/user-edit', user.id]" class="btn btn-success">Editar</a>
+    <button class="btn btn-danger" type="button" (click)="deleteUser(user.id)">Borrar</button>
   </div>
 </div>
 </div>
