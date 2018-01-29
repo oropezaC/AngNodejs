@@ -17,20 +17,18 @@ export class UserEditComponent implements OnInit {
   }
 
   getDataId(id) {
-    this.http.get('http://localhost:3000/usuarios/'+id).subscribe(data => {
+    this.http.get('/usuarios/'+id).subscribe(data => {
       this.user = data[0];
     });
   }
 
   updateUser(user) {
-   this.http.put('http://localhost:3000/usuarios', user)
-     .subscribe(res => {
-       console.log(res)
-         let id = res['id'];
-         this.router.navigate(['/usuario']);
-       }, (err) => {
-         console.log(err);
-       }
-     );
- }
+    this.http.put('/usuarios', user)
+    .subscribe(res => {
+      let id = res['id'];
+      this.router.navigate(['/usuario']);
+    }, (err) => {
+    }
+  );
+}
 }

@@ -17,18 +17,17 @@ export class UsuarioDetailComponent implements OnInit {
   }
 
   getDataId(id) {
-      this.http.get('http://localhost:3000/usuarios/'+id).subscribe(data => {
-        this.user = data[0];
-      });
-    }
-
-  deleteUser(id) {
-  this.http.delete('http://localhost:3000/usuarios/'+id)
-    .subscribe(res => {
-        this.router.navigate(['/usuario']);
-      }, (err) => {
-        console.log(err);
-      }
-    );
+    this.http.get('/usuarios/'+id).subscribe(data => {
+      this.user = data[0];
+    });
   }
+  
+  deleteUser(id) {
+    this.http.delete('/usuarios/'+id)
+    .subscribe(res => {
+      this.router.navigate(['/usuario']);
+    }, (err) => {
+    }
+  );
+}
 }
